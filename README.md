@@ -1,11 +1,16 @@
+<div align="center">
+  
 # projectinit-ai
-
+  
 **The Next-Gen Economics Research Boilerplate (DIME Standards + AI Agents)**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
-[![Stata](https://img.shields.io/badge/Stata-14%2B-blue)](https://www.stata.com/)
-[![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange)](https://ai.google.dev/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://www.python.org/)
+[![Stata](https://img.shields.io/badge/Stata-14%2B-blue?style=flat-square)](https://www.stata.com/)
+[![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange?style=flat-square)](https://ai.google.dev/)
+[![Stars](https://img.shields.io/github/stars/MaykolMedrano/projectinit-ai?style=flat-square&color=blue)](https://github.com/MaykolMedrano/projectinit-ai/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
+</div>
 
 > Un andamiaje de investigación *One-Click Reproducible* que integra los rigurosos estándares metodológicos de **DIME (Banco Mundial)** y el **AEA Data Editor**, potenciado por un enjambre algorítmico local de **Agentes de Inteligencia Artificial**.
 > Es la evolución oficial del paquete original de Stata [`projectinit`](https://github.com/MaykolMedrano/projectinit).
@@ -18,7 +23,7 @@ Inspirado por el trabajo en educación y reproducibilidad de **Pedro Sant'Anna**
 
 ## ¿Por qué Projectinit-AI?
 
-La investigación empírica moderna exige dos cosas que suelen competir entre sí: **Velocidad** (para implementar modelos complejos rápidamente) y **Rigor Absoluto** (para publicar en Top Journals cumpliendo estándares J-PAL/AEA). 
+La investigación empírica moderna exige dos cosas que suelen competir entre sí: **Velocidad** (para implementar modelos complejos rápidamente) y **Rigor Absoluto** (para publicar en Top Journals cumpliendo estándares J-PAL/AEA).
 
 `projectinit-ai` resuelve este dilema al inyectar tu repositorio vacío con un equipo de Inteligencia Artificial ("El Cerebro") y una arquitectura lista para la producción. No tienes que entrenar a la IA sobre qué es un Instrumental Variable o cómo estructurar carpetas; ya viene programado.
 
@@ -90,12 +95,14 @@ graph LR
 ```
 
 Tu laboratorio incluye **Perfiles de Agentes Autónomos**:
+
 1. **El Orquestador:** Administra la memoria del proyecto, divide tareas complejas (Tesis o Papers) y llama a otros agentes.
 2. **Revisor de Dominio (Crítico Causal):** Especialista en Inferencia Causal (Angrist/Pischke). Antes de que corras una regresión, este agente audita tu diseño metodológico contra sus `checklists` internos (Matching, IV, SCM, RDD).
 3. **El Creador:** Experto en Python y Stata, enfocado en generar código limpio que cumpla con los lineamientos de Gentzkow & Shapiro.
 4. **Verificador de Calidad:** Audita las salidas (Output Files) buscando P-hacking encubierto, errores de estandarización o gráficas mal formateadas.
 
 **¿Cómo usarlos?** Solo abre el chat de tu IA y escribe los Workflows globales:
+
 - `/contractor-mode`: Desata un loop contencioso donde El Creador y El Crítico debaten tu código hasta que es inquebrantable.
 - `/data-analysis`: Obliga a la IA a hacer análisis exploratorio real (estadísticas de resumen) antes de proponer modelos.
 - `/qa-quarto`: Pule tus .tex y .md académicamente.
@@ -104,17 +111,21 @@ Tu laboratorio incluye **Perfiles de Agentes Autónomos**:
 
 ## Reproducibilidad Nativa (Master Pipeline)
 
-Este repositorio abandona los cuadernos desordenados (Jupyter/Do's aislados). 
+Este repositorio abandona los cuadernos desordenados (Jupyter/Do's aislados).
 
 ### Para usuarios de Python: 02_scripts/00_master.py
+
 Se te genera un Pipeline de Ejecución Grado-Corporativo que:
+
 - Fija semillas globales `np.random.seed()` y de Python Built-in.
 - Determina rutas automáticas agnósticas a tu computadora usando `pathlib`.
 - Captura toda la consola local y documenta una bitácora en `03_outputs/logs/master_{timestamp}.log`.
 - Ejecuta los scripts con `subprocess` deteniendo la cola si algún modelo de Análisis o Preparación falla.
 
 ### Para usuarios de Stata: 02_scripts/00_master.do
+
 Incluye el clásico andamiaje NBER:
+
 - `adopath ++` para aislar tu ambiente de librerías en Stata.
 - Instalador silencioso de dependencias en `02_scripts/ados/stata_packages.do`.
 - Ejecución limpia y lineal asegurando `set seed`.
@@ -125,25 +136,31 @@ Incluye el clásico andamiaje NBER:
 
 ¿Cansado de leer decenas de PDFs antes de tu Review of Literature?
 
-El repositorio incluye un script especializado en `02_scripts/ados/gemini_lit_extractor.py`. Utilizando la ventana de contexto de **Gemini 2.5 Flash**, este script inyectará cientos de páginas de un PDF en milisegundos y devolverá un resumen metodológico en la carpeta `04_literature/reading_notes`. 
+El repositorio incluye un script especializado en `02_scripts/ados/gemini_lit_extractor.py`. Utilizando la ventana de contexto de **Gemini 2.5 Flash**, este script inyectará cientos de páginas de un PDF en milisegundos y devolverá un resumen metodológico en la carpeta `04_literature/reading_notes`.
 
-### Instrucciones de uso:
+### Instrucciones de uso
+
 1. Obtén tu llave y ejecútalo en consola:
+
    ```bash
    set GOOGLE_API_KEY=tu_clave_aca
    ```
+
 2. Deposita PDFs en `04_literature/papers/`.
 3. Ejecuta:
+
    ```bash
    python 02_scripts/ados/gemini_lit_extractor.py
    ```
+
 4. Revisiones de literatura (Pregunta Central, Datos, Métodos, Fallas Causales) aparecerán auto-escritas en formato Markdown.
 
 ---
 
-## Cómo Empezar 
+## Cómo Empezar
 
 **Paso 1: Clonar e Iniciar tu Investigación**
+
 1. Haz clic en el botón verde **Use this template** (arriba a la derecha en GitHub) > **Create a new repository**.
 2. Ponle nombre a tu proyecto (ej: `tesis-polucion`) y clónalo a tu computadora.
 3. Abre la carpeta recién clonada en tu Editor (Cursor / VS Code). El `CLAUDE.md` levantará a los Agentes de inmediato.
@@ -154,10 +171,13 @@ Usa tu chat para pedir modelos y deja que el `/contractor-mode` audite tu econom
 ---
 
 ## Filosofía y Reconocimientos
+
 Este andamiaje es la culminación de buenas prácticas recopiladas de:
+
 - **DIME (World Bank)** — Arquitectura de Archivos Global.
 - **AEA Data Editor** — Estándares de Transparencia del Código.
 - **J-PAL (MIT)** — Integridad de Datos e Investigación Limpia.
 
 ## Licencia
+
 Este repositorio está distribuido libremente bajo la licencia [MIT](LICENSE).
