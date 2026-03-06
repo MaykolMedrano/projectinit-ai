@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+
+\sisetup{
+    separate-uncertainty=true,
+    table-align-uncertainty=true,
+    table-format=-1.3,
+    tight-spacing=true,
+    input-symbols = { ( ) },
+    table-align-text-after=false
+}
+
+\begin{document}
+
+\begin{table}[htbp]
+    \centering
+    \begin{threeparttable}
+    \caption{Triple Difference (DDD) Estimates of Policy Impact}
+    \label{tab:ddd_impact}
+    \begin{tabular}{l *{3}{S}}
+        \toprule
+        & {(1)} & {(2)} & {(3)} \\
+        Variable & {Baseline DDD} & {+ State Trends} & {Full Controls} \\
+        \midrule
+        $Treat \times Post \times Group$ & 0.452*** & 0.438*** & 0.421*** \\
+                                        & (0.082)   & (0.085)   & (0.088)   \\
+        \addlinespace
+        $Treat \times Post$             & -0.120**  & -0.115*   & -0.105    \\
+                                        & (0.055)   & (0.060)   & (0.065)   \\
+        $Treat \times Group$            & 0.045     & 0.042     & 0.038     \\
+                                        & (0.032)   & (0.035)   & (0.038)   \\
+        $Post \times Group$             & 0.210***  & 0.205***  & 0.198***  \\
+                                        & (0.045)   & (0.048)   & (0.052)   \\
+        \addlinespace
+        $Treat$                         & 0.012     & 0.015     & 0.010     \\
+                                        & (0.020)   & (0.022)   & (0.025)   \\
+        $Post$                          & 0.085***  & 0.082***  & 0.078***  \\
+                                        & (0.015)   & (0.018)   & (0.020)   \\
+        $Group$                         & -0.045**  & -0.040    & -0.035    \\
+                                        & (0.022)   & (0.025)   & (0.028)   \\
+        \midrule
+        Observations                    & {12,450}  & {12,450}  & {12,450}  \\
+        $R^2$                           & 0.342     & 0.385     & 0.412     \\
+        State-specific Trends           & {No}      & {Yes}     & {Yes}     \\
+        Covariates                      & {No}      & {No}      & {Yes}     \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \small
+        \item \textit{Notes:} This table presents the DDD estimates. Standard errors clustered at the group level are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\end{document}

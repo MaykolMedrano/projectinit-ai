@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+
+\sisetup{
+    separate-uncertainty=true,
+    table-align-uncertainty=true,
+    table-format=1.2,
+    tight-spacing=true,
+    input-symbols = { ( ) },
+    table-align-text-after=false
+}
+
+\begin{document}
+
+\begin{table}[htbp]
+    \centering
+    \begin{threeparttable}
+    \caption{Covariate Balance and Sample Characteristics}
+    \label{tab:balance_table}
+    \begin{tabular}{l *{4}{S}}
+        \toprule
+        & {Control} & {Treatment} & {Difference} & {$p$-value} \\
+        Variable & {(N=450)} & {(N=442)} & {(1)-(2)} & {(t-test)} \\
+        \midrule
+        Age (years)      & 34.50  & 34.42  & 0.08  & 0.845 \\
+                         & (8.20) & (8.15) &       &       \\
+        Education (years) & 12.45  & 12.60  & -0.15 & 0.450 \\
+                         & (2.40) & (2.35) &       &       \\
+        Household Income & 45.20  & 46.10  & -0.90 & 0.312 \\
+        (\$1,000s)       & (15.4) & (16.2) &       &       \\
+        Female (\%)      & 0.52   & 0.51   & 0.01  & 0.910 \\
+                         & (0.50) & (0.50) &       &       \\
+        Urban (\%)       & 0.78   & 0.80   & -0.02 & 0.785 \\
+                         & (0.41) & (0.40) &       &       \\
+        \midrule
+        \textbf{Joint orthogonality F-test (p-value)} & & & & 0.645 \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \small
+        \item \textit{Notes:} This table reports the mean values of baseline characteristics for the control and treatment groups. Standard deviations are in parentheses. The $p$-value in the last column is for a t-test of equality of means. The bottom row reports the $p$-value from a joint F-test of all covariates.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\end{document}

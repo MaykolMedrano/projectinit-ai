@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{projectinit_aer}[2026/03/06 Projectinit AER/NBER Professional Tables Style]
+
+% --- Core Packages ---
+\RequirePackage{booktabs}
+\RequirePackage{siunitx}
+\RequirePackage{caption}
+\RequirePackage{threeparttable}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[margin=1in]{geometry}
+
+% --- siunitx DNA (Asterisk Clustering Fix) ---
+\sisetup{
+    separate-uncertainty=true,
+    table-align-uncertainty=true,
+    table-format=1.4,
+    tight-spacing=true,
+    input-symbols = { ( ) [ ] }, % Asterisk (*) removed to avoid spacing issues
+    table-align-text-after=false % FIX: Forces stars to cluster with the number
+}
+
+% --- Professional Captions ---
+\captionsetup[table]{
+    labelsep=period,
+    justification=centering,
+    font={small,sc}, % Small Caps for Table Label
+    labelfont=bf
+}
+
+% --- Custom column types for convenience ---
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % For tabularx if needed
+
+% --- Command for Standard Errors in Panel layouts ---
+\newcommand{\stddev}[1]{\footnotesize (#1)}
+
+\endinput

@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+
+\sisetup{
+    table-format=4.3,
+    tight-spacing=true,
+    input-symbols = { ( ) }
+}
+
+\begin{document}
+
+\begin{table}[htbp]
+    \centering
+    \begin{threeparttable}
+    \caption{Advanced Summary Statistics by Treatment Status}
+    \label{tab:sumstats_advanced}
+    \begin{tabular}{l *{2}{S} *{2}{S} *{2}{S}}
+        \toprule
+        & \multicolumn{2}{c}{Control} & \multicolumn{2}{c}{Treatment} & \multicolumn{2}{c}{Overall} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        Variable & {Mean} & {SD} & {Mean} & {SD} & {Skew} & {Kurt} \\
+        \midrule
+        Age              & 34.52  & 8.12  & 34.48  & 8.20  & 0.42  & 2.85  \\
+        Income (\$k)     & 42.15  & 15.42 & 41.98  & 15.65 & 1.25  & 4.12  \\
+        Household Size   & 4.20   & 1.15  & 4.25   & 1.10  & 0.12  & 2.95  \\
+        Assets Index     & 0.124  & 0.850 & 0.130  & 0.842 & -0.05 & 3.10  \\
+        Education (yrs)  & 12.45  & 2.10  & 12.50  & 2.15  & -0.85 & 3.42  \\
+        Distance to Road & 5.12   & 3.45  & 5.08   & 3.52  & 1.42  & 5.20  \\
+        \midrule
+        Observations     & \multicolumn{2}{c}{4,250} & \multicolumn{2}{c}{4,182} & \multicolumn{2}{c}{8,432} \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \small
+        \item \textit{Notes:} This table reports higher-order moments to verify distributional similarity between experimental arms. Skewness and Kurtosis calculated for the combined sample.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\end{document}

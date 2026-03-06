@@ -1,18 +1,18 @@
 <div align="center">
   
 # projectinit-ai
-  
-**The Next-Gen Economics Research Boilerplate (DIME Standards + AI Agents)**
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://www.python.org/)
-[![Stata](https://img.shields.io/badge/Stata-14%2B-blue?style=flat-square)](https://www.stata.com/)
-[![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange?style=flat-square)](https://ai.google.dev/)
-[![Stars](https://img.shields.io/github/stars/MaykolMedrano/projectinit-ai?style=flat-square&color=blue)](https://github.com/MaykolMedrano/projectinit-ai/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+**Framework de Investigación Económica (DIME Standards + Protocol Units)**
+
+[![PyPI version](https://img.shields.io/pypi/v/projectinit-ai.svg)](https://pypi.org/project/projectinit-ai/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/MaykolMedrano/projectinit-ai/python-app.yml?branch=main)](https://github.com/MaykolMedrano/projectinit-ai/actions)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/projectinit-ai.svg)](https://pypi.org/project/projectinit-ai/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
-> Un andamiaje de investigación *One-Click Reproducible* que integra los rigurosos estándares metodológicos de **DIME (Banco Mundial)** y el **AEA Data Editor**, potenciado por un enjambre algorítmico local de **Agentes de Inteligencia Artificial**.
+> Una **Infraestructura de Investigación** *One-Click Reproducible* que integra los rigurosos estándares metodológicos de **DIME (Banco Mundial)** y el **AEA Data Editor**, potenciada por un ecosistema de **Protocolos de Inteligencia Artificial**.
 > Es la evolución oficial del paquete original de Stata [`projectinit`](https://github.com/MaykolMedrano/projectinit).
 
 **Autor**: Maykol Medrano | **GitHub**: [@MaykolMedrano](https://github.com/MaykolMedrano)
@@ -21,11 +21,7 @@ Inspirado por el trabajo en educación y reproducibilidad de **Pedro Sant'Anna**
 
 ---
 
-## ¿Por qué Projectinit-AI?
-
-La investigación empírica moderna exige dos cosas que suelen competir entre sí: **Velocidad** (para implementar modelos complejos rápidamente) y **Rigor Absoluto** (para publicar en Top Journals cumpliendo estándares J-PAL/AEA).
-
-`projectinit-ai` resuelve este dilema al inyectar tu repositorio vacío con un equipo de Inteligencia Artificial ("El Cerebro") y una arquitectura lista para la producción. No tienes que entrenar a la IA sobre qué es un Instrumental Variable o cómo estructurar carpetas; ya viene programado.
+`projectinit-ai` integra un entorno de investigación con una arquitectura modular basada en protocolos. El sistema automatiza la configuración de estructuras DIME y la aplicación de estándares técnicos en inferencia causal y visualización de datos.
 
 ---
 
@@ -39,7 +35,7 @@ YourProject/
 ├── 02_scripts/            # Data Preparation, Analysis, Validation y Master Scripts
 │   ├── 00_master.do       # DIME Master Do-file (Stata)
 │   ├── 00_master.py       # DIME Master Script (Python)
-│   └── ados/              # Gemini Lit Extractor y utilitarios
+│   └── utilities/         # Gemini Lit Extractor y utilitarios
 ├── 03_outputs/            # Tablas LaTeX, Figuras y Logs originales
 ├── 04_literature/         # Papers descargados y Notas autogeneradas con IA
 ├── 05_doc/                # Manuscrito y presentaciones
@@ -53,14 +49,15 @@ YourProject/
 
 ## Arquitectura del Sistema
 
-El siguiente diagrama ilustra cómo interactúan los Agentes de IA con la estructura de archivos DIME y tu flujo de trabajo:
+El siguiente diagrama ilustra cómo interactúan las Unidades de Protocolo con la estructura de archivos DIME y el flujo de trabajo:
 
 ```mermaid
 graph TD
-    User([Usuario]) -->|Comandos /| Orch[Orquestador AI]
-    Orch <-->|Lee/Escribe| DIME[(Estructura DIME)]
-    Orch -->|Asigna Tarea| Creator[Agente Creador]
-    Orch -->|Solicita Auditoría| Critic[Agente Crítico]
+    User([Usuario]) -->|Comandos /| Orch[Orquestador Principal]
+    Orch <-->|Technical Authority| Econ[Protocol: Econometrics]
+    Orch <-->|Ruteo de Datos| DIME[(Estructura DIME)]
+    Orch -->|Ejecución| Creator[Protocol: Creator]
+    Orch -->|Auditoría Científica| Critic[Protocol: Critic]
     
     subgraph "Laboratorio Digital (DIME)"
         DIME --- D1[01_data]
@@ -69,43 +66,64 @@ graph TD
     end
     
     Creator -->|Genera Código| D2
-    Critic -->|Audita| D2
     Critic -->|Valida| D3
-    Critic -->|Checklists| CK{Causal & Code Checklists}
+    Critic -->|Cumplimiento| Econ
 ```
 
 ---
 
-## El Ecosistema Multi-Agente (.agents/)
+## El Ecosistema de Protocolos (.agents/)
 
-El verdadero poder de esta plantilla radica en su carpeta oculta `.agents/`. A través del archivo `CLAUDE.md`, cualquier IDE moderno (Cursor, VS Code + Cline, Windsurf) absorberá las "Reglas de Dominio" de la Economía Cuantitativa.
+El verdadero poder de esta plantilla radica en su carpeta oculta `.agents/`. A través del archivo `CLAUDE.md`, cualquier IDE moderno (Cursor, VS Code) absorberá las **"Protocol Units"** de la Economía Cuantitativa.
 
-### Ciclo Adversarial (Contractor Mode)
+Tu laboratorio incluye **Unidades de Protocolo Autónomas**:
 
-Para garantizar que el código no solo corra, sino que sea metodológicamente sólido, implementamos un loop de "Abogado del Diablo":
+1. **Protocol: Econometrics (Technical Authority):** Posee el ADN de las Top 5 journals. Enforcea el "AER-Look" (no vertical lines, siunitx fix, clustered stars).
+2. **Protocol: Creator (Execution Unit):** Experto en Python/Stata enfocado en código limpio y reproducible.
+3. **Protocol: Critic (Causal Identification):** Auditor adversarial de diseños empíricos (SUTVA, Pre-trends, Low Power).
+4. **Protocol: Verifier (Quality Gate):** El último paso antes del cierre, califica la estética y el rigor técnico.
 
-```mermaid
-graph LR
-    Plan[Plan de Investigación] --> Create[Creador: Escribe Script]
-    Create --> Audit[Crítico: Audita vs Checklist]
-    Audit -- "Falla (Major/Critical)" --> Create
-    Audit -- "Pasa (Approved)" --> Verify[Verificador: Califica Output]
-    Verify -- "< Umbral" --> Create
-    Verify -- ">= Umbral" --> Final([Output de Grado Académico])
-```
+---
 
-Tu laboratorio incluye **Perfiles de Agentes Autónomos**:
+## Estándares de Visualización y Reporte
 
-1. **El Orquestador:** Administra la memoria del proyecto, divide tareas complejas (Tesis o Papers) y llama a otros agentes.
-2. **Revisor de Dominio (Crítico Causal):** Especialista en Inferencia Causal (Angrist/Pischke). Antes de que corras una regresión, este agente audita tu diseño metodológico contra sus `checklists` internos (Matching, IV, SCM, RDD).
-3. **El Creador:** Experto en Python y Stata, enfocado en generar código limpio que cumpla con los lineamientos de Gentzkow & Shapiro.
-4. **Verificador de Calidad:** Audita las salidas (Output Files) buscando P-hacking encubierto, errores de estandarización o gráficas mal formateadas.
+El framework incluye una galería de templates diseñados para cumplir con especificaciones técnicas de publicación:
+
+### Gráficos y Visualización
+
+Basados en criterios de proporcionalidad técnica (Líneas 1.1, Ejes 0.6):
+
+- **Event Studies & Parallel Trends**
+- **Synthetic Control Method (SCM)**
+- **Regression Discontinuity (RDD/RKD)**
+- **Density Comparisons & IV Dashboards**
+
+### Estructuras de Tablas
+
+Configuradas para alineación numérica mediante `siunitx`:
+
+- **Paper Pillar:** Layout de alta densidad para múltiples outcomes.
+- **Saturated DDD:** Especificaciones de triple diferencia.
+- **Heterogeneity Matrix:** Análisis de canales y subgrupos.
+- **Advanced summary stats:** Reporte de momentos estadísticos.
+
+> Todos los templates están disponibles en `gallery/` para referenciar como "Gold Standard" durante la escritura del paper.
+
+---
+
+## Infraestructura Científica de Grado de Publicación
+
+`projectinit-ai` provee los componentes finales para la sumisión y réplica:
+
+- **Master Manuscript (manuscript.tex):** Un andamiaje LaTeX completo en `05_doc/` que integra automáticamente el estilo `projectinit_aer.sty` y la configuración `siunitx` profesional.
+- **Protocolo de Réplica (REPD.md):** Guía de empaquetado final basada en los estándares del **AEA Data Editor**. Asegura que el proyecto sea reproducible por terceros desde el primer día.
+- **Estilo Centralizado (projectinit_aer.sty):** Encapsula el ADN visual de la AER/NBER, permitiendo que tus tablas `.tex` sean limpias y modulares.
 
 **¿Cómo usarlos?** Solo abre el chat de tu IA y escribe los Workflows globales:
 
-- `/contractor-mode`: Desata un loop contencioso donde El Creador y El Crítico debaten tu código hasta que es inquebrantable.
-- `/data-analysis`: Obliga a la IA a hacer análisis exploratorio real (estadísticas de resumen) antes de proponer modelos.
-- `/qa-quarto`: Pule tus .tex y .md académicamente.
+- **Protocolo: Contractor Mode (`/contractor-mode`):** Activa el ciclo adversario entre las unidades Critic y Creator hasta alcanzar la perfección técnica.
+- **Análisis Pre-Flight (`/data-analysis`):** Obliga a la exploración rigurosa de datos antes de proponer modelos de estimación.
+- **Scientific Humanizer (`/humanizer`):** Pule el tono académico de tus borradores y notas de lectura.
 
 ---
 
@@ -127,16 +145,14 @@ Se te genera un Pipeline de Ejecución Grado-Corporativo que:
 Incluye el clásico andamiaje NBER:
 
 - `adopath ++` para aislar tu ambiente de librerías en Stata.
-- Instalador silencioso de dependencias en `02_scripts/ados/stata_packages.do`.
+- Instalador silencioso de dependencias en `02_scripts/utilities/stata_packages.do`.
 - Ejecución limpia y lineal asegurando `set seed`.
 
 ---
 
 ## Gemini Auto-Literature Extractor (v2.5)
 
-¿Cansado de leer decenas de PDFs antes de tu Review of Literature?
-
-El repositorio incluye un script especializado en `02_scripts/ados/gemini_lit_extractor.py`. Utilizando la ventana de contexto de **Gemini 2.5 Flash**, este script inyectará cientos de páginas de un PDF en milisegundos y devolverá un resumen metodológico en la carpeta `04_literature/reading_notes`.
+El repositorio incluye una herramienta en `02_scripts/utilities/gemini_lit_extractor.py` para procesar documentos PDF y generar resúmenes técnicos en `04_literature/reading_notes`.
 
 ### Instrucciones de uso
 
@@ -150,8 +166,10 @@ El repositorio incluye un script especializado en `02_scripts/ados/gemini_lit_ex
 3. Ejecuta:
 
    ```bash
-   python 02_scripts/ados/gemini_lit_extractor.py
+   python 02_scripts/utilities/gemini_lit_extractor.py --api-key TU_CLAVE_AQUI
    ```
+
+   *(Opcional: Si ya tienes exportada la variable `GOOGLE_API_KEY`, simplemente ejecuta `python 02_scripts/utilities/gemini_lit_extractor.py`)*
 
 4. Revisiones de literatura (Pregunta Central, Datos, Métodos, Fallas Causales) aparecerán auto-escritas en formato Markdown.
 
@@ -159,20 +177,51 @@ El repositorio incluye un script especializado en `02_scripts/ados/gemini_lit_ex
 
 ## Cómo Empezar
 
-**Paso 1: Clonar e Iniciar tu Investigación**
+**Paso 1: Instalación del paquete (Vía PIP)**
 
-1. Haz clic en el botón verde **Use this template** (arriba a la derecha en GitHub) > **Create a new repository**.
-2. Ponle nombre a tu proyecto (ej: `tesis-polucion`) y clónalo a tu computadora.
-3. Abre la carpeta recién clonada en tu Editor (Cursor / VS Code). El `CLAUDE.md` levantará a los Agentes de inmediato.
+Abre tu terminal y ejecuta:
 
-**Paso 2: Desarrolla tu Paper**
+```bash
+pip install projectinit-ai
+```
+
+**Paso 2: Genera tu Laboratorio Inicial**
+
+Navega a la carpeta donde quieras crear tu investigación y ejecuta:
+
+```bash
+projectinit-ai nombre_de_tu_proyecto
+```
+
+*(Esto creará la carpeta con la estructura DIME y los Agentes instantáneamente).*
+
+**Paso 3: Desarrolla tu Paper e Inicializa los Agentes**
+
+Entra a la carpeta (`cd nombre_de_tu_proyecto`), instala las dependencias locales (`pip install -r requirements.txt`) y abre tu Editor (Cursor / VS Code). El `CLAUDE.md` levantará a los Agentes de inmediato.
 Usa tu chat para pedir modelos y deja que el `/contractor-mode` audite tu econometría y guarde tus tablas impecables en `03_outputs`.
+
+---
+
+## Integración con Agentes de IA
+
+El framework está diseñado para ser "AI-Native", permitiendo que diferentes herramientas de asistencia técnica absorban el conocimiento del proyecto:
+
+### Configuración por Herramienta
+
+- **Cursor / Windsurf:** Estos IDEs leen automáticamente el archivo `CLAUDE.md` en la raíz del proyecto. Al abrir la carpeta, el agente asumirá los principios de DIME y los protocolos de visualización definidos.
+- **Claude Desktop / Cline / Roo Code:** Se recomienda indexar la carpeta `.agents/` para que el asistente tenga acceso a los checklists y workflows de validación econométrica.
+- **Antigravity / Custom Agents:** El archivo `CLAUDE.md` sirve como la "Constitución" del proyecto, definiendo las reglas de escritura de código y reporte de resultados.
+
+### El rol de CLAUDE.md y .agents/
+
+- **CLAUDE.md:** Centraliza las reglas de estilo de código, la estructura de carpetas y los comandos disponibles.
+- **Directorio .agents/:** Contiene los protocolos específicos (Econometría, Creador, Crítico) y checklists que el agente debe consultar antes de finalizar cualquier tarea.
 
 ---
 
 ## Filosofía y Reconocimientos
 
-Este andamiaje es la culminación de buenas prácticas recopiladas de:
+Esta **Infraestructura** es la culminación de buenas prácticas recopiladas de:
 
 - **DIME (World Bank)** — Arquitectura de Archivos Global.
 - **AEA Data Editor** — Estándares de Transparencia del Código.

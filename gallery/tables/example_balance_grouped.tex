@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+
+\sisetup{
+    separate-uncertainty=true,
+    table-align-uncertainty=true,
+    table-format=1.2,
+    tight-spacing=true,
+    input-symbols = { ( ) },
+    table-align-text-after=false
+}
+
+\begin{document}
+
+\begin{table}[htbp]
+    \centering
+    \begin{threeparttable}
+    \caption{Baseline Balance by Variable Category}
+    \label{tab:balance_grouped}
+    \begin{tabular}{l *{4}{S}}
+        \toprule
+        & {Control} & {Treatment} & {Difference} & {$p$-value} \\
+        Variable & {(N=1,200)} & {(N=1,185)} & {(1)-(2)} & {(t-test)} \\
+        \midrule
+        \multicolumn{5}{l}{\textbf{Panel A: Individual Demographics}} \\
+        Age (years)      & 28.45  & 28.52  & -0.07 & 0.720 \\
+                         & (5.10) & (5.12) &       &       \\
+        Female (\%)      & 0.48   & 0.49   & -0.01 & 0.810 \\
+                         & (0.50) & (0.50) &       &       \\
+        Married (\%)     & 0.32   & 0.31   & 0.01  & 0.925 \\
+                         & (0.46) & (0.46) &       &       \\
+        \addlinespace
+        \multicolumn{5}{l}{\textbf{Panel B: Socio-Economic Background}} \\
+        Years of Schooling & 10.20  & 10.15  & 0.05  & 0.640 \\
+                         & (2.80) & (2.85) &       &       \\
+        Monthly Income (\$) & 450.25 & 455.10 & -4.85 & 0.512 \\
+                         & (120.4) & (125.2) &       &       \\
+        Employed (\%)    & 0.65   & 0.64   & 0.01  & 0.745 \\
+                         & (0.48) & (0.48) &       &       \\
+        \addlinespace
+        \multicolumn{5}{l}{\textbf{Panel C: Household Assets}} \\
+        Owns Home (\%)   & 0.42   & 0.44   & -0.02 & 0.580 \\
+                         & (0.49) & (0.50) &       &       \\
+        Number of Rooms  & 3.20   & 3.25   & -0.05 & 0.615 \\
+                         & (1.10) & (1.15) &       &       \\
+        \midrule
+        \textbf{Joint F-test (p-value)} & & & & 0.895 \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \small
+        \item \textit{Notes:} This table presents covariate balance grouped by thematic panels. Standard deviations are in parentheses. The joint F-test p-value indicates no systematic differences across categories.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\end{document}
